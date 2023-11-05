@@ -3,7 +3,7 @@ package org.example.StructuralPatterns.Decorator.before;
 import org.example.StructuralPatterns.Decorator.object.PlainTextMessage;
 import org.example.StructuralPatterns.Decorator.object.ClientType;
 
-public class ClientService {
+public class PrecursorClientService {
 
     public void sendMessage(ClientType clientType) {
         if (clientType == ClientType.Apple) {
