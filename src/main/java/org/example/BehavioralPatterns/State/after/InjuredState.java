@@ -7,7 +7,7 @@ public class InjuredState implements BodyState {
 
     @Override
     public void move(MoveStrategy moveStrategy) {
-        System.out.print("無法正常移動");
+        System.out.println("無法正常移動");
     }
 
     @Override

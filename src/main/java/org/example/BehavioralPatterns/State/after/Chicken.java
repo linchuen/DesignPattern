@@ -9,6 +9,10 @@ public class Chicken implements Bird {
     @Override
     public void move(BodyState bodyState, MoveStrategy moveStrategy) {
         System.out.print("雞 ");
+        if (moveStrategy instanceof FlyStrategy) {
+            System.out.println("拍動翅膀 但甚麼事都沒發生");
+            return;
+        }
         bodyState.move(moveStrategy);
     }
 
