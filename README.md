@@ -34,8 +34,25 @@
 而將各種行為拆分至不同的類別裡面。
 
 # 物件導向設計原則 - SOLID
-- (SRP) 單一職責
-- (OCP) 開放/封閉原則
-- (LSP) Liskov替換
-- (ISP) 介面隔離
-- (DIP) 依賴反轉
+這邊稱SOLID為設計原則，選用原則這詞代表在特定情境下會有不適用的情況，所以並不像生物會死亡這種真理強烈
+，因此在設計時不用過度糾結時否都有滿足原則定義，可遵守80/20法則及當時情況判斷。
+---
+- (Single Responsibility Principle) 單一職責  
+原文:*"There should never be more than one reason for a class to change."*  
+物件都傭有各自的職責，越抽象的物件、行為會涵蓋較大的職責，而越具體的物件、行為會有明確且清晰的職責也接近細節的呈現。
+>例子: 工程師有工程師的職責、pm有pm的職責，彼此互不干涉其工作方式，而各自的職責又能分成多個細項
+
+>違反情境: 當同事或主管請假的時候，職務代理人此時就會打破此原則，負責其他人的職責
+- (Open Closed Principle) 開放/封閉原則  
+原文:*"Software entities ... should be open for extension, but closed for modification."*  
+處理新的功能能夠在既有結構下完成功能的新增，在修改既有功能能夠不更動既有架構達到目的，簡言之，每次新增/修改功能都是獨立事件。
+
+>例子: 每顆燈泡都是獨立運作的，不會因為加了一顆燈泡別顆燈泡因此不亮，或者跟換成黃色燈泡原本的白色燈泡變成黃燈
+
+> 違反情境: 當頒布新的法律或修改法律時，公司運作就必須配合新的法律規則變更其運作方式
+- (Liskov Substitution Principle) Liskov替換  
+原文:*"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."*
+- (Interface Segregation Principle) 介面隔離  
+原文:*"Clients should not be forced to depend upon interfaces that they do not use."*
+- (Dependency inversion principle) 依賴反轉
+原文:*"Depend upon abstractions, not concretions."*
