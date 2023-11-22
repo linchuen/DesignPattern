@@ -49,10 +49,27 @@
 
 >例子: 每顆燈泡都是獨立運作的，不會因為加了一顆燈泡別顆燈泡因此不亮，或者跟換成黃色燈泡原本的白色燈泡變成黃燈
 
-> 違反情境: 當頒布新的法律或修改法律時，公司運作就必須配合新的法律規則變更其運作方式
+>違反情境: 當頒布新的法律或修改法律時，公司運作就必須配合新的法律規則變更其運作方式
 - (Liskov Substitution Principle) Liskov替換  
-原文:*"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."*
+原文:*"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."*  
+子類別在擴展父類別的功能,應遵守父類別原有的功能的意圖。
+
+>例子: 腳踏車不管是輪子改裝成方形的或是三角形的都要能夠正常的騎乘  
+> [三角形腳踏車視頻](https://www.youtube.com/watch?v=Q6SaDFYw1Fc)  
+>[方形腳踏車視頻](https://www.youtube.com/shorts/MDCXoEqM-iQ)
+
+>違反情境: 現實總是有特例，例如:企鵝不能飛、彈塗魚可以在地上爬、肺魚可以不用鰓呼吸
 - (Interface Segregation Principle) 介面隔離  
 原文:*"Clients should not be forced to depend upon interfaces that they do not use."*
+使用者不應該知道與自己無關的功能，應只關心自己需要的功能
+
+>例子: 一般人開車不需要知道汽車內部實際的運作原理，只要懂得怎麼開車就好
+
+>違反情境: 食品標示上常常會出現工廠生產線含有過敏成分，一般人這訊息是多餘的，但對過敏的人極為重要
 - (Dependency inversion principle) 依賴反轉
 原文:*"Depend upon abstractions, not concretions."*
+應依賴於抽象的概念，而不是依賴於具體細節
+
+>例子: 網球上手發球，其步驟為拋球、瞄準、打擊，而不是依賴於球拍固定角度，如直球發球與曲球發球的角度就不一樣
+
+>違反情境: 正常情況下，門只能由同一形狀的鑰匙打開，而不是任一把鑰匙都能開
