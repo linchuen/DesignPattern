@@ -23,7 +23,7 @@
 ### 行為定義
 由不同的動作或是更具體的行為，透過一連串流程組成。
 ### 資料定義
-用於描述物件的狀態，本身僅提供數值或屬性，例如:顏色、姓名...，並且能夠識別出個體差異。
+用於描述物件的狀態，本身僅提供數值或屬性，例如:顏色、姓名...，並且能夠識別出個體差異。  
 
 ### 物件導向三大特色
 按涵蓋範圍排序
@@ -92,4 +92,35 @@
 > - 警告
 > - 待辦事項
 
-# 5.
+# 5.看待Design Pattern運用
+### Design Pattern分類
+##### 創建模式(Creational patterns)
+此類模式主要關注物件的創建  
+1. Factory Method
+2. Abstract Factory
+3. Builder
+4. Prototype
+5. Singleton
+##### 結構模式(Structural patterns)
+此類模式主要關注如何讓物件能夠具備彈性適應變化
+6. Adapter
+7. Bridge
+8. Composite
+9. Decorator
+10. Facade
+11. Flyweight
+12. Proxy
+##### 行為模式(Behavioral patterns)
+此類模式主要關注行為間的交互關係
+13. Chain of Responsibility
+14. Command
+15. Iterator
+16. Mediator
+17. Memento
+18. Observer
+19. State
+20. Strategy
+21. Template Method
+22. Visitor
+23. Interpreter
+
