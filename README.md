@@ -17,7 +17,7 @@
 因為程式中的類別產生就是物件，因此設計上會使用類別去對應現實的物件，
 並且使用方法去對應物件的行為，但是現實的物件通常有各式各樣的行為，
 為了不產生出一個擁有全部行為的龐大類，所以將各種行為拆分至不同的類別裡面。
----
+<br>
 ### 物件定義
 參照現實中的各種物件，物件應具有不同的行為。
 ### 行為定義
@@ -135,7 +135,7 @@
 - State
 - Strategy
 - Template Method
-
+> [if-else炸裂示意圖](https://github.com/linchuen/DesignPattern/blob/master/if-else%E7%82%B8%E8%A3%82.jpg?raw=true)
 ##### 處理資料
 - Prototype
 - Flyweight
