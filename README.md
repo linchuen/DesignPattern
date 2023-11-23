@@ -93,15 +93,21 @@
 > - 待辦事項
 
 # 5.看待Design Pattern運用
+### Design Pattern使用
+程式隨著開發功能越來越多，程式執行流程逐漸變得複雜，久而久之逐漸成為「大泥球」，
+變得湊綜複雜，可維護性降低，間接造成對新人不友善、過度依賴資深員工，為了避免大泥球即早出現，
+使用Design Pattern是一個很好出發點，主要是降低複雜度、抽象化細節、可重複利用程式代碼，
+不過每個模式都有自己適合的情境，並不存在完美的方案，用與不用取決於個人的取捨。
+
 ### Design Pattern分類
-##### 創建模式(Creational patterns)
+#### 創建模式(Creational patterns)
 此類模式主要關注物件的創建  
 1. Factory Method
 2. Abstract Factory
 3. Builder
 4. Prototype
 5. Singleton
-##### 結構模式(Structural patterns)
+#### 結構模式(Structural patterns)
 此類模式主要關注如何讓物件能夠具備彈性適應變化  
 1. Adapter
 2. Bridge
@@ -110,7 +116,7 @@
 5. Facade
 6. Flyweight
 7. Proxy
-##### 行為模式(Behavioral patterns)
+#### 行為模式(Behavioral patterns)
 此類模式主要關注行為間的交互關係  
 1. Chain of Responsibility
 2. Command
@@ -125,7 +131,7 @@
 11. Interpreter
 
 ### 個人的分類
-##### 可用於消除if-else的模式
+#### 可用於消除if-else的模式
 這邊並不是完全消除if判斷，而是讓程式在流程上能夠在高層次就決定流程的走向，讓低層次能夠專注於自己的步驟。  
 舉例:用戶在發送請求之前，就已經決定身分  
 (Template Method是反向模式)
@@ -141,8 +147,9 @@
 - Flyweight
 - Adapter
 
-##### 其餘
+#### 其餘
 
 ### 概念圖
 ![](https://github.com/linchuen/DesignPattern/blob/master/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F%E6%80%9D%E8%80%83%E7%A4%BA%E6%84%8F%E5%9C%96.jpg?raw=true)
-
+概念說明:   
+起始物件(後面用使用者表示，比較貼近現實)可能只有一種，隨著需求變化，使用者種類開始變多，可以考慮使用工廠模式
