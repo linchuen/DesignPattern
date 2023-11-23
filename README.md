@@ -124,3 +124,25 @@
 22. Visitor
 23. Interpreter
 
+### 個人的分類
+##### 可用於消除if-else的模式
+這邊並不是完全消除if判斷，而是讓程式在流程上能夠在高層次就決定流程的走向，讓低層次能夠專注於自己的步驟。  
+舉例:用戶在發送請求之前，就已經決定身分  
+(Template Method是反向模式)
+- Factory Method
+- Abstract Factory
+- Bridge
+- State
+- Strategy
+- Template Method
+
+##### 處理資料
+- Prototype
+- Flyweight
+- Adapter
+
+##### 其餘
+
+### 概念圖
+![](https://github.com/linchuen/DesignPattern/blob/master/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F%E6%80%9D%E8%80%83%E7%A4%BA%E6%84%8F%E5%9C%96.jpg)
+
