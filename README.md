@@ -102,7 +102,7 @@
 4. Prototype
 5. Singleton
 ##### 結構模式(Structural patterns)
-此類模式主要關注如何讓物件能夠具備彈性適應變化
+此類模式主要關注如何讓物件能夠具備彈性適應變化  
 6. Adapter
 7. Bridge
 8. Composite
@@ -111,7 +111,7 @@
 11. Flyweight
 12. Proxy
 ##### 行為模式(Behavioral patterns)
-此類模式主要關注行為間的交互關係
+此類模式主要關注行為間的交互關係  
 13. Chain of Responsibility
 14. Command
 15. Iterator
