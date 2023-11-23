@@ -103,26 +103,26 @@
 5. Singleton
 ##### 結構模式(Structural patterns)
 此類模式主要關注如何讓物件能夠具備彈性適應變化  
-6. Adapter
-7. Bridge
-8. Composite
-9. Decorator
-10. Facade
-11. Flyweight
-12. Proxy
+1. Adapter
+2. Bridge
+3. Composite
+4. Decorator
+5. Facade
+6. Flyweight
+7. Proxy
 ##### 行為模式(Behavioral patterns)
 此類模式主要關注行為間的交互關係  
-13. Chain of Responsibility
-14. Command
-15. Iterator
-16. Mediator
-17. Memento
-18. Observer
-19. State
-20. Strategy
-21. Template Method
-22. Visitor
-23. Interpreter
+1. Chain of Responsibility
+2. Command
+3. Iterator
+4. Mediator
+5. Memento
+6. Observer
+7. State
+8. Strategy
+9. Template Method
+10. Visitor
+11. Interpreter
 
 ### 個人的分類
 ##### 可用於消除if-else的模式
@@ -144,5 +144,5 @@
 ##### 其餘
 
 ### 概念圖
-![](https://github.com/linchuen/DesignPattern/blob/master/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F%E6%80%9D%E8%80%83%E7%A4%BA%E6%84%8F%E5%9C%96.jpg)
+![](https://github.com/linchuen/DesignPattern/blob/master/%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F%E6%80%9D%E8%80%83%E7%A4%BA%E6%84%8F%E5%9C%96.jpg?raw=true)
 
