@@ -168,7 +168,11 @@
 &emsp;&emsp;程式設計最好從物件的角度出發，不要從行為的角度出發，從行為出發容易造成行為呼叫另一個行為(本人稱之為行為鏈)，
 概念上有像微服務的編舞(Choreography)與編曲(Orchestration)的差異，從物件出發的好處是程式更接近現實表達方式，
 如果不小心產生行為鏈，會因為有循環依賴警告能重新審視設計，缺點是物件的職責會超多，從行為出發的好處是單純、簡單，
-缺點是時間一長行為關係變得複雜。
+缺點是時間一長行為關係變得複雜。  
+[行為鏈示意圖](https://github.com/linchuen/DesignPattern/blob/master/%E8%A1%8C%E7%82%BA%E9%8F%88%E7%A4%BA%E6%84%8F%E5%9C%96.jpg?raw=true)
+vs
+[物件關係示意圖](https://github.com/linchuen/DesignPattern/blob/master/%E7%89%A9%E4%BB%B6%E9%97%9C%E4%BF%82%E7%A4%BA%E6%84%8F%E5%9C%96.jpg?raw=true)
+[多個物件關係表示]()
 
 # 6.好閱讀的程式
 &emsp;&emsp;這邊有句十分貼切主題的名言，「**寫程式要優先給人看，然後才是電腦**」，所以可讀性是相當重要的，
