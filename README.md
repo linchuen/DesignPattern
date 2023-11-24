@@ -172,7 +172,7 @@
 [行為鏈示意圖](https://github.com/linchuen/DesignPattern/blob/master/%E8%A1%8C%E7%82%BA%E9%8F%88%E7%A4%BA%E6%84%8F%E5%9C%96.jpg?raw=true)
 vs
 [物件關係示意圖](https://github.com/linchuen/DesignPattern/blob/master/%E7%89%A9%E4%BB%B6%E9%97%9C%E4%BF%82%E7%A4%BA%E6%84%8F%E5%9C%96.jpg?raw=true)
-[多個物件關係表示]()
+![多個物件關係表示](https://github.com/linchuen/DesignPattern/blob/master/%E5%A4%9A%E5%80%8B%E7%89%A9%E4%BB%B6%E9%97%9C%E4%BF%82%E8%A1%A8%E7%A4%BA.jpg?raw=true)
 
 # 6.好閱讀的程式
 &emsp;&emsp;這邊有句十分貼切主題的名言，「**寫程式要優先給人看，然後才是電腦**」，所以可讀性是相當重要的，
