@@ -95,6 +95,12 @@
 > - 闡釋
 > - 警告
 > - 待辦事項
+```javascript
+//Why
+function what(){
+   how
+}
+```
 
 # 5.看待Design Pattern運用
 ### Design Pattern使用
