@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="第 1 页" id="vOwTCtGYsXDZ4DPpxDcl">
+    <mxGraphModel dx="1434" dy="778" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YlSmMOGyO37-bstjp8w8-1" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="400" as="sourcePoint" />
+            <mxPoint x="720" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-2" value="重要性" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="730" y="388" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-3" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="600" as="sourcePoint" />
+            <mxPoint x="400" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-4" value="緊急度" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="50" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-5" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;重要且緊急&lt;/font&gt;&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="550" y="100" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-6" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;緊急&lt;/font&gt;但不重要&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="170" y="100" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;不緊急且不重要&lt;/b&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="440" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-8" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;重要但不緊急&lt;/font&gt;&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="440" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-9" value="- 緊急修復重大線上 bug（Production incident）&lt;br&gt;- 突然的安全性漏洞修補（Security patches）&lt;br&gt;- 交付日快到的功能卡關排解（Deadline-driven fixes）" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="160" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-10" value="- 上層催促的小需求但影響不大（Minor feature rush）&lt;br&gt;- 無意義的緊急會議（Pointless meetings）" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="170" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-11" value="- 追一些不必要的新潮技術（Shiny new tech）&lt;br&gt;- 無目的地優化（過早優化 Premature optimization）" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="490" width="310" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-12" value="- 系統架構設計（System design）&lt;br&gt;- 重構技術債（Technical debt refactor）&lt;br&gt;- 自動化測試建立（Test automation）&lt;br&gt;- 持續學習新技術（Skill up）" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="475" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-13" value="- 追逐不切實際的新技術（無直接效益的技術研究）&lt;br&gt;- 重複造輪子（自己寫明明有現成套件）&lt;br&gt;- 花太多時間做低使用率功能" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-14" value="- 新功能開發規劃與設計（New feature design）&lt;br&gt;- 技術債重構（Refactoring tech debt）&lt;br&gt;- 系統架構升級與性能優化&lt;br&gt;- 自動化測試系統建置&lt;br&gt;- 深度用戶訪談、需求蒐集" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="535" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-15" value="- 線上重大故障緊急修復（Prod bug hotfix）&lt;br&gt;- 緊急需求變更（像是法規變更）&lt;br&gt;- 上線前的最後測試與修正&lt;br&gt;- 關鍵客戶提出的blocking問題處理" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="210" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-16" value="- 頻繁但無太大價值的小改版需求（如小圖調整、文案修改緊急催促）&lt;br&gt;- 無意義但時間急迫的內部會議" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YlSmMOGyO37-bstjp8w8-17" value="&lt;b&gt;優秀的開發與產品團隊，不是把「火災」處理得很快，而是讓「火災」根本發生得很少。&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="640" width="500" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
