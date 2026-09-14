@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="從物件導向、SOLID 到設計模式，以互動圖解理解變化與封裝，寫出給人看的程式。">
+  <meta name="theme-color" content="#20243b"><title>設計模式思考筆記 · Design Pattern</title>
+  <link rel="icon" href="web/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="web/style.css">
+  <script src="web/app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要內容</a>
+<header class="topbar">
+  <a class="brand" href="#overview"><span class="brand-mark">dp<span>·</span></span><span>設計模式<span class="brand-sub">思考筆記</span></span></a>
+  <div class="header-right"><span class="edition">A DEVELOPER’S FIELD NOTES</span><a href="README.md" class="source-link" target="_blank" rel="noopener">原始筆記 ↗</a><button class="menu-button" aria-label="開啟章節導覽" aria-expanded="false" aria-controls="sidebar">☰</button></div>
+</header>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">LEARNING GUIDE <span>學習導覽</span></div>
+  <nav aria-label="章節導覽">
+    <a href="#overview" class="nav-link active"><span class="nav-icon">⌂</span>概念總覽<span class="nav-dot"></span></a>
+    <div class="nav-divider"></div><p class="nav-caption">從觀念出發</p>
+    <a href="#language" class="nav-link"><span>01</span>看待程式語言</a>
+    <a href="#objects" class="nav-link"><span>02</span>看待物件導向</a>
+    <a href="#solid" class="nav-link"><span>03</span>SOLID 設計原則</a>
+    <div class="nav-divider"></div><p class="nav-caption">讓設計更有意圖</p>
+    <a href="#intent" class="nav-link"><span>04</span>程式運作與設計</a>
+    <a href="#patterns" class="nav-link"><span>05</span>設計模式的運用</a>
+    <a href="#readability" class="nav-link"><span>06</span>好閱讀的程式</a>
+  </nav>
+  <div class="sidebar-note"><span>✳</span><p>找出變化，<br>並將其封裝。</p></div>
+</aside>
+<main id="main">
+<section class="overview observed" id="overview">
+  <div class="breadcrumb">學習筆記 <span>/</span> 概念總覽</div>
+  <div class="hero">
+    <div class="hero-copy"><p class="eyebrow"><span></span> THINK IN OBJECTS. DESIGN FOR CHANGE.</p><h1>好的設計，<br>從<span class="underlined">理解變化</span>開始。</h1><p class="hero-description">設計模式是思考的工具。從物件、行為到彼此的關係，<br class="desktop-br">一起探索如何寫出更容易理解、也更容易改變的程式。</p><a class="primary-button" href="#language">開始閱讀 <span>↗</span></a><a class="text-button" href="#patterns">探索設計模式 <span>→</span></a><div class="hero-meta"><span>6 個核心章節</span><i></i><span>5 組概念圖解</span><i></i><span>依自己的步調閱讀</span></div></div>
+    <div class="hero-visual"><img src="web/assets/hero.png" alt="由可組合的綠色幾何模組構成的建築，象徵彼此協作又保有界線的物件" width="1536" height="1024"><span class="figure-label"><span>FIG. 01</span> 把複雜，組合成清晰。</span></div>
+  </div>
+  <div class="opening-note"><span class="note-symbol">↳</span><p><strong>先理解問題，再選擇模式。</strong>這份筆記從個人經驗出發，提供審視程式的思考起點。<br>原則與模式都有適合的情境；好的設計，來自理解後的取捨。</p><span class="note-tag">ABOUT THESE NOTES</span></div>
+  <div class="section-heading"><div><p class="eyebrow">THE LEARNING PATH</p><h2>從觀念到實踐的六個視角</h2></div><span class="small-muted">循序閱讀，也可以從有興趣的地方開始</span></div>
+  <div class="chapter-grid">
+    <a class="chapter-card" href="#language"><div class="card-top"><span class="chapter-number">01</span><span class="card-glyph">Aa</span></div><h3>看待程式語言</h3><p>程式不只是給電腦的指令，<br>也是工程師之間的交流。</p><div class="card-bottom"><span>語言 · 溝通 · 可讀性</span><span>↗</span></div></a>
+    <a class="chapter-card" href="#objects"><div class="card-top"><span class="chapter-number">02</span><span class="card-glyph">▧</span></div><h3>看待物件導向</h3><p>從物件、行為與資料，<br>理解封裝、多型與繼承。</p><div class="card-bottom"><span>抽象 · 邊界 · 重複利用</span><span>↗</span></div></a>
+    <a class="chapter-card" href="#solid"><div class="card-top"><span class="chapter-number">03</span><span class="card-glyph">⫶</span></div><h3>SOLID 設計原則</h3><p>用五個原則審視設計，<br>也保留面對情境的彈性。</p><div class="card-bottom"><span>職責 · 介面 · 依賴</span><span>↗</span></div></a>
+    <a class="chapter-card" href="#intent"><div class="card-top"><span class="chapter-number">04</span><span class="card-glyph">ƒ</span></div><h3>程式運作與設計</h3><p>分開 Why、What 與 How，<br>讓程式傳達背後的意圖。</p><div class="card-bottom"><span>意圖 · 抽象 · 細節</span><span>↗</span></div></a>
+    <a class="chapter-card" href="#patterns"><div class="card-top"><span class="chapter-number">05</span><span class="card-glyph">⌘</span></div><h3>設計模式的運用</h3><p>從需求的變化出發，<br>找到合適的模式與協作方式。</p><div class="card-bottom"><span>23 個模式 · 互動圖解</span><span>↗</span></div></a>
+    <a class="chapter-card" href="#readability"><div class="card-top"><span class="chapter-number">06</span><span class="card-glyph">≋</span></div><h3>好閱讀的程式</h3><p>把注意力留給重要的事，<br>練習寫出給人看的程式。</p><div class="card-bottom"><span>認知 · 表達 · 練習</span><span>↗</span></div></a>
+  </div>
+  <div class="overview-quote"><span>“</span><p>寫程式要優先給人看，然後才是電腦。</p><span class="quote-caption">這份筆記的出發點</span></div>
+</section>
+<section class="lesson observed" id="language"><div class="lesson-heading"><span class="lesson-number">01</span><div><p class="eyebrow">CODE AS COMMUNICATION</p><h2>看待程式語言</h2></div></div><p class="lead">把程式語言，看成工程師之間的交流媒介。</p><p>程式語言能讓我們向電腦發出明確指令，但軟體工程處理的是現實的問題。當另一位工程師接手，程式也需要告訴他：這個系統正在解決什麼。</p><p>就像日常對話會選擇容易理解的表達，程式也值得用清晰的命名與結構來溝通。可讀性，正是 Clean Code 關心的事情。</p><div class="concept-strip"><div><span>01 / 現實問題</span><strong>我們想解決什麼？</strong></div><b>→</b><div><span>02 / 程式表達</span><strong>讓意圖被理解</strong></div><b>→</b><div><span>03 / 團隊交流</span><strong>讓下一個人接得上</strong></div></div><aside class="reflection"><span>想一想</span>如果拿掉口頭解釋，同事能從命名看出這段程式的用途嗎？</aside></section>
+<section class="lesson observed" id="objects"><div class="lesson-heading"><span class="lesson-number">02</span><div><p class="eyebrow">OBJECTS, BEHAVIORS & DATA</p><h2>看待物件導向</h2></div></div><p class="lead">先分清楚「是什麼」、「做什麼」與「現在的狀態」。</p><p>類別建立物件，方法表達行為，資料描述狀態。若把現實物件的所有行為都塞進同一個類別，它容易長得太大；透過拆分與組合，讓各個職責有清楚的邊界。</p><div class="three-grid"><article class="mini-card"><span class="mini-symbol">○</span><h3>物件 Object</h3><p>承擔職責的個體，擁有狀態並提供行為。</p><small>例如：一位使用者</small></article><article class="mini-card"><span class="mini-symbol">↗</span><h3>行為 Behavior</h3><p>由動作與流程組成，表達物件能做什麼。</p><small>例如：提交一份申請</small></article><article class="mini-card"><span class="mini-symbol">≡</span><h3>資料 Data</h3><p>描述屬性與狀態，識別個體之間的差異。</p><small>例如：姓名、申請狀態</small></article></div><h3 class="subheading">三個讓設計更有彈性的能力</h3><div class="principle-list"><details open><summary><span>01</span>封裝 <small>Encapsulation</small></summary><p>隱藏實作細節，只露出需要的概念。可以從物件、行為與資料三個面向，思考哪些細節應該留在邊界內。</p></details><details><summary><span>02</span>多型 <small>Polymorphism</small></summary><p>相同的介面可以有不同實作。呼叫者表達「做什麼」，具體物件決定「怎麼做」，讓替換行為更容易。</p></details><details><summary><span>03</span>繼承 <small>Inheritance</small></summary><p>延伸既有類別，重用共同的定義與行為。繼承也會建立依賴；只有當子類別確實能遵守父類別的契約時，這個關係才合理。</p></details></div><aside class="reflection"><span>思考起點</span>原筆記以重複利用理解物件導向；實際設計時，也一起考量職責、封裝與變更的影響。</aside></section>
+<section class="lesson observed" id="solid"><div class="lesson-heading"><span class="lesson-number">03</span><div><p class="eyebrow">PRINCIPLES, WITH CONTEXT</p><h2>SOLID 設計原則</h2></div></div><p class="lead">原則提供判斷的方向，情境決定如何運用。</p><p>先問「這個設計讓哪一種變更更容易？」再決定要引入多少抽象。以下將原文的生活比喻轉成設計提問；比喻是理解的起點，不是軟體契約的反例。</p><div class="solid-tabs" role="tablist" aria-label="SOLID 五個原則"></div><div id="solid-panel" role="tabpanel" tabindex="0"></div></section>
+<section class="lesson observed" id="intent"><div class="lesson-heading"><span class="lesson-number">04</span><div><p class="eyebrow">WHY → WHAT → HOW</p><h2>程式運作與設計</h2></div></div><p class="lead">讓不同層次，各自說清楚一件事。</p><div class="intent-grid"><div><article><span>WHY</span><h3>為什麼這麼做？</h3><p>背景、限制與取捨。程式不容易自行交代的理由，值得用註解保留下來。</p></article><article><span>WHAT</span><h3>正在做什麼？</h3><p>用有意義的方法名稱封裝細節，讓讀者先看懂整體流程。</p></article><article><span>HOW</span><h3>具體怎麼完成？</h3><p>在實作內呈現運算與操作，需要理解細節時再往下閱讀。</p></article></div><div class="code-panel"><div class="code-top"><span>意圖的三個層次</span><span>JavaScript</span></div><pre><code><span class="code-comment">// WHY：外部服務偶爾不穩定，
+// 暫時保留重試機會。</span>
+<span class="code-keyword">function</span> <span class="code-name">submitWithRetry</span>() {
+  <span class="code-comment">// WHAT：方法名稱表達目的</span>
+  <span class="code-keyword">return</span> retry(submitRequest, {
+    <span class="code-comment">// HOW：重試的具體設定</span>
+    attempts: <span class="code-value">3</span>
+  });
+}</code></pre><p>概念片段，用來觀察表達層次。</p></div></div><aside class="reflection"><span>註解的取捨</span>補充意圖、限制、警告與待辦事項；修改程式時同步檢查註解，避免讓過時的文字增加誤解。</aside></section>
+<section class="lesson observed" id="patterns"><div class="lesson-heading"><span class="lesson-number">05</span><div><p class="eyebrow">PATTERNS FOLLOW CHANGE</p><h2>設計模式的運用</h2></div></div><p class="lead">找出變化，並將其封裝。</p><p>功能不斷增加，流程可能逐漸成為難以理解的「大泥球」。模式提供共同的設計語彙，幫助我們抽象細節、降低認知複雜度與重用程式。每個模式都有代價，先看問題，再選工具。</p>
+  <div class="diagram-title"><div><p class="eyebrow">FIG. 02 / BRANCHING</p><h3>讓判斷回到合適的層次</h3></div><div class="segmented" aria-label="分支圖比較"><button data-branch="before" aria-pressed="true">需求堆疊</button><button data-branch="after" aria-pressed="false">封裝變化</button></div></div><figure class="diagram-box"><img id="branch-image" src="web/assets/branching.svg" alt="原本單一函式因為多個條件而形成八條可能路徑" loading="lazy"><figcaption id="branch-caption">三個獨立布林條件，最多形成 2³ = 8 種組合。判斷散落各處，閱讀成本也跟著增加。</figcaption></figure><p class="fine-note">目的不是消滅所有 if-else，而是在合適的層次選擇流程，讓細節專注自己的步驟。Factory、Strategy、State、Bridge 或 Template Method 都可能有幫助，取決於變化的位置。</p>
+  <div class="diagram-title" id="pattern-map"><div><p class="eyebrow">THE BIG PICTURE / CONCEPT MAP</p><h3>設計模式思考示意圖</h3></div><a class="map-link" href="web/assets/design-pattern-map.svg" target="_blank" rel="noopener">開啟完整大圖 ↗</a></div><figure class="diagram-box full-pattern-map"><img src="web/assets/design-pattern-map.svg" alt="設計模式思考總覽：從物件連結建立與存取、行為與流程、組合與協作三種視角，共十二種模式的關係圖" loading="lazy"><figcaption>由原始思考示意圖重新繪製。每個小圖呈現一種封裝方式，幫助比較模式的意圖；下方互動圖再逐步說明需求如何帶動設計。</figcaption></figure>
+  <div class="diagram-title"><div><p class="eyebrow">FIG. 03 / A DESIGN THAT EVOLVES</p><h3>隨著需求，逐步長出設計</h3></div><span class="small-muted">點選階段，觀察變化</span></div><div class="evolution-steps" aria-label="設計演進階段"></div><figure class="diagram-box evolution-box"><div id="evolution-diagram"></div><figcaption id="evolution-caption" aria-live="polite"></figcaption></figure><p class="fine-note">這是一條可能的思考路徑，不是必須照順序套用的流程。Template Method 以繼承固定演算法骨架；將整套演算法抽出並以組合替換，則更接近 Strategy。</p>
+  <div class="section-heading catalog-heading"><div><p class="eyebrow">THE PATTERN LIBRARY</p><h3>23 種模式，三個關注方向</h3></div><label class="search"><span>⌕</span><input type="search" id="pattern-search" placeholder="搜尋模式或關鍵字" aria-label="搜尋模式或關鍵字"><kbd>/</kbd></label></div><div class="filter-row"><div class="filters" aria-label="模式分類"><button data-filter="all" class="selected" aria-pressed="true">全部 <span>23</span></button><button data-filter="creational" aria-pressed="false">創建模式 <span>5</span></button><button data-filter="structural" aria-pressed="false">結構模式 <span>7</span></button><button data-filter="behavioral" aria-pressed="false">行為模式 <span>11</span></button></div><span id="result-count" aria-live="polite"></span></div><div id="pattern-grid" class="pattern-grid"></div><p id="empty-search" hidden>沒有符合的模式。試試「行為」、「工廠」或清除搜尋。</p>
+  <div class="diagram-title"><div><p class="eyebrow">FIG. 04–06 / RELATIONSHIPS</p><h3>行為怎麼協作，物件怎麼相依？</h3></div></div><div class="relationship-tabs segmented" aria-label="物件關係圖"><button data-relation="chain" aria-pressed="true">行為鏈</button><button data-relation="objects" aria-pressed="false">物件的協作</button><button data-relation="coupling" aria-pressed="false">多物件與耦合</button></div><figure class="diagram-box"><img id="relationship-image" src="web/assets/behavior-chain.svg" alt="行為依序跨越物件 A 與物件 B 呼叫，形成較長的相依鏈" loading="lazy"><figcaption id="relationship-caption">行為彼此呼叫，流程直接，但鏈條變長後，理解一個行為可能得追蹤更多步驟與物件。</figcaption></figure><aside class="reflection"><span>保留取捨</span>原筆記偏向由物件協調行為，以貼近現實職責；同時也提醒協調者可能膨脹。行為鏈與集中協調各有情境，圖中的重疊只用來比喻依賴程度，並非耦合的量化指標。</aside></section>
+<section class="lesson observed" id="readability"><div class="lesson-heading"><span class="lesson-number">06</span><div><p class="eyebrow">DESIGN FOR THE READER</p><h2>好閱讀的程式</h2></div></div><p class="lead">讀者的注意力有限，把它留給真正重要的事。</p><p>好閱讀的程式和好文章一樣，需要合適的詞彙、連貫的結構與恰到好處的細節。以原筆記的六個角度，重新檢查一段你熟悉的程式。</p><div class="readability-list"><article><span>01</span><div><h3>符合讀者的先備知識</h3><p>使用特殊演算法時，提供足夠背景，讓接手的人理解用途。</p></div></article><article><span>02</span><div><h3>選擇熟悉、好理解的語言</h3><p>使用團隊與領域中一致的詞彙，減少猜測名稱的時間。</p></div></article><article><span>03</span><div><h3>減少推論的困難度</h3><p>避免過度抽象與跳轉，讓讀者看得出行為如何連接。</p></div></article><article><span>04</span><div><h3>保持結構完整、上下連貫</h3><p>先呈現主要流程，再讓細節落在適合的位置。</p></div></article><article><span>05</span><div><h3>適當補回先前的脈絡</h3><p>在上下文分散的地方，補充使用時機、原因與限制。</p></div></article><article><span>06</span><div><h3>降低無關訊息的干擾</h3><p>移除失效註解與過時程式，讓重要訊息保持清楚。</p></div></article></div><div class="closing-note"><p class="eyebrow">A PRACTICE, NOT A DESTINATION</p><h3>閱讀 → 比較 → 模仿 → 內化</h3><p>多讀不同風格的程式，體會它們好懂與難懂的地方，再練習表達自己的理解。像在讀書會分享一本書，在有限篇幅內說出概念，會幫助我們練習組織程式。</p></div></section>
+<footer><a class="brand footer-brand" href="#overview"><span class="brand-mark">dp<span>·</span></span>持續思考，持續設計。</a><span>改編自 DesignPattern README · 概念教學</span><a href="#overview">回到頂端 ↑</a></footer>
+</main>
+<dialog id="pattern-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="關閉模式說明">×</button><div id="dialog-content"></div><button class="dialog-done primary-button">回到模式列表 ↗</button></dialog>
+</body></html>

@@ -1,0 +1,7 @@
+{
+  "name": "design-pattern-field-notes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "從 README 重新編排的設計模式概念教學",
+  "scripts": { "start": "node server.mjs", "dev": "node server.mjs", "check": "node --check web/app.js && node --check server.mjs" }
+}
