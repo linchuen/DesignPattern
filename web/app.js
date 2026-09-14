@@ -79,29 +79,74 @@ const relationContent = {
 $$('[data-relation]').forEach(button => button.addEventListener('click', () => { const r = relationContent[button.dataset.relation]; $$('[data-relation]').forEach(b => b.setAttribute('aria-pressed', b === button)); $('#relationship-image').src = `web/assets/${r[0]}.svg`; $('#relationship-image').alt = r[1]; $('#relationship-caption').textContent = r[2]; }));
 
 const stages = [
-  ['起始物件','Object','需求單純時，一個物件完成固定行為即可。先讓職責清楚，保留最少必要結構。'],
-  ['種類增加','Factory','建立的物件種類變多，把建立決策移到工廠。使用端透過共同契約合作。'],
-  ['骨架固定','Template','流程順序一致，但部分步驟不同。以樣板方法固定骨架，由子類別實作變動步驟。'],
-  ['流程替換','Strategy','同一個任務有不同演算法。物件以組合持有策略，讓整套行為可以被替換。'],
-  ['獨立維度','Bridge','物件的抽象與行為實作需要分別擴展。用橋接把兩個維度拆開，減少組合類別。'],
-  ['協作增加','Mediator','多個物件的互動變得複雜。由中介者協調，讓參與者專注各自的行為。']
+  ['只有個人報表','先用簡單物件','個人報表自己讀取紀錄、計算本數，再顯示結果。此時不需要額外的模式。',
+    '讀者想知道自己這個月讀了幾本書。',
+    '只有一種報表、一種計算方式，也只有網頁輸出。目前沒有需要拆開的變化。',
+    '用一個個人報表物件完成任務，先讓命名與職責清楚。',
+    '個人報表 → 讀取紀錄、計算本數、顯示結果',
+    '維持目前結構，不預先增加工廠、策略或其他介面。',
+    '判斷重點：沒有變化的壓力，就不必為了模式增加類別。'],
+  ['新增團體報表','Factory Method','個人與團體匯出器沿用共同的匯出流程，分別覆寫「建立報表」方法，回傳對應的報表物件。',
+    '主辦人也想查看整個讀書會的閱讀統計。',
+    '共用匯出流程原本直接建立個人報表；現在建立哪一種報表，要由具體的匯出器決定。',
+    '在共同匯出器保留建立報表的擴充點，個人與團體匯出器各自覆寫它。',
+    '共用匯出流程直接建立個人報表。',
+    '共用流程呼叫建立方法，由子類別回傳個人或團體報表。',
+    '判斷重點：封裝的是「建立哪一種物件」。若只有簡單選擇，一個建立函式也可能足夠。'],
+  ['兩種報表重複步驟','Template Method','報表基底固定「取得紀錄 → 統計 → 呈現」的順序；個人與團體報表只覆寫取得紀錄的方式。',
+    '兩種報表都要先取資料、再統計、最後呈現，只有資料範圍不同。',
+    '複製兩份流程後，調整共同步驟必須改兩次，還可能漏改其中一份。',
+    '把共同骨架搬到報表基底，用樣板方法固定順序，讓子類別覆寫取資料的步驟。',
+    '個人報表、團體報表各自維護一份完整流程。',
+    '共同流程維護一份；個人取自己的紀錄，團體取全體成員的紀錄。',
+    '判斷重點：骨架相同、部分步驟不同。這一站整理報表內容，上一站處理報表的建立。'],
+  ['切換統計方式','Strategy','報表持有統計策略，將紀錄交給「按本數」或「按頁數」策略，取得計算結果。',
+    '同一份報表要能讓使用者切換「閱讀本數」與「閱讀頁數」。',
+    '若用子類別代表每種算法，就得增加個人本數、個人頁數、團體本數、團體頁數等組合。',
+    '將統計演算法抽成策略，由報表組合使用；切換選項時替換策略。',
+    '每份報表內部自行判斷用本數還是頁數計算。',
+    '選項決定統計策略；報表只負責傳入紀錄並使用結果。',
+    '與 Template 的差別：Template 保留骨架、由繼承覆寫步驟；Strategy 以組合替換演算法。此處可只替換骨架中的統計步驟。'],
+  ['增加 PDF 輸出','Bridge','個人與團體報表透過輸出介面呈現內容，網頁與 PDF 各自實作輸出；兩邊可以獨立增加種類。',
+    '個人與團體報表都要支援網頁預覽和 PDF 下載，以後還可能加入新報表與新格式。',
+    '若每個組合都做一個類別，兩種報表乘上兩種格式就有四個類別，往後會持續增加。',
+    '分開「報表的內容與種類」和「如何輸出」，讓報表持有輸出實作的介面。',
+    '個人網頁、個人 PDF、團體網頁、團體 PDF 各做一份。',
+    '個人／團體報表 × 網頁／PDF 輸出，以組合配對。',
+    '與 Strategy 的差別：上一站換的是計算算法；這一站刻意拆開兩個都會成長的維度。若只是偶爾換格式，未必需要完整橋接結構。'],
+  ['報表設定互相影響','Mediator','報表設定面板由中介者協調：接收報表種類、統計方式與輸出格式的變更，再通知預覽更新。',
+    '設定面板增加報表種類、統計方式、輸出格式；改動其中一項，都要更新預覽和可用選項。',
+    '如果每個控制項直接呼叫其他控制項，互動規則會散落在多個元件，修改時難以追蹤。',
+    '加入面板中介者。控制項回報變更，由中介者協調其他元件；統計與輸出仍交給原本的物件。',
+    '種類選單、統計選單、格式選單與預覽彼此直接呼叫。',
+    '控制項 → 面板中介者 → 更新選項與預覽。',
+    '判斷重點：封裝的是「元件如何互動」。中介者只協調，不接管統計算法與 PDF 產生。']
 ];
+let currentStage = 0;
 $('.evolution-steps').innerHTML = stages.map((s,i) => `<button data-stage="${i}" aria-pressed="${i === 0}">${String(i+1).padStart(2,'0')} ${s[0]}<span>${s[1]}</span></button>`).join('');
 function svgNode(x,y,w,label,sub='',fill='#fff') { return `<g><rect x="${x}" y="${y}" width="${w}" height="65" rx="11" fill="${fill}" stroke="#bddbd0"/><text x="${x+w/2}" y="${y+28}" text-anchor="middle" fill="#20243b" font-size="15">${label}</text><text x="${x+w/2}" y="${y+49}" text-anchor="middle" fill="#86967a" font-size="10">${sub}</text></g>`; }
 function edge(x1,y1,x2,y2) { return `<path d="M${x1} ${y1} L${x2} ${y2}" fill="none" stroke="#4e9c83" stroke-width="1.6" marker-end="url(#evo-arrow)"/>`; }
 function showStage(i) {
+  currentStage = i;
+  const s = stages[i];
+  $('#evolution-story').innerHTML = `<div class="stage-scenario"><span>需求 ${String(i+1).padStart(2,'0')} / ${s[1]}</span><h4>${s[3]}</h4></div><div class="stage-reasoning"><article><h5>原本遇到的問題</h5><p>${s[4]}</p></article><article><h5>這次調整哪裡</h5><p>${s[5]}</p></article></div><div class="stage-comparison"><p><strong>調整前</strong>${s[6]}</p><p><strong>調整後</strong>${s[7]}</p></div><p class="stage-takeaway">${s[8]}</p>`;
+  $('#stage-position').textContent = `${i+1} / ${stages.length}`;
+  $('#stage-previous').disabled = i === 0;
+  $('#stage-next').disabled = i === stages.length - 1;
   let body = '';
-  if(i===0) body = edge(340,160,520,160)+svgNode(160,128,180,'使用者物件','清楚的職責','#dff1e9')+svgNode(520,128,180,'固定行為','完成目前需要的事');
-  if(i===1) body = edge(275,160,390,88)+edge(275,160,390,228)+edge(550,88,640,160)+edge(550,228,640,160)+svgNode(100,128,175,'建立入口','Factory','#dff1e9')+svgNode(390,55,160,'一般使用者','具體類別 A')+svgNode(390,195,160,'管理使用者','具體類別 B')+svgNode(640,128,165,'共同契約','使用端依賴抽象');
-  if(i===2) body = `<rect x="100" y="68" width="700" height="183" rx="18" fill="#e4f2ed" stroke="#b7c8a7"/><text x="125" y="99" font-size="13" fill="#648054">固定的演算法骨架 · Template Method</text>`+edge(300,169,363,169)+edge(537,169,600,169)+svgNode(125,136,175,'共同準備','固定步驟')+svgNode(363,136,174,'變動步驟','由子類別覆寫','#ffedb0')+svgNode(600,136,175,'共同收尾','固定步驟');
-  if(i===3) body = edge(320,160,540,78)+edge(320,160,540,168)+edge(320,160,540,258)+svgNode(130,128,190,'使用者物件','持有一個策略介面','#dff1e9')+svgNode(540,45,220,'策略 A','整套演算法 A')+svgNode(540,135,220,'策略 B','整套演算法 B')+svgNode(540,225,220,'策略 C','整套演算法 C');
-  if(i===4) body = `<rect x="65" y="44" width="325" height="245" rx="16" fill="#e1f1e9"/><rect x="510" y="44" width="325" height="245" rx="16" fill="#fff0c6"/><text x="90" y="77" font-size="14" fill="#6e815c">抽象維度 · 獨立擴展</text><text x="535" y="77" font-size="14" fill="#8e8566">實作維度 · 獨立擴展</text>`+edge(350,160,550,160)+svgNode(105,104,245,'使用者抽象','透過實作介面委派','#fff')+svgNode(105,202,245,'不同使用者','延伸抽象端')+svgNode(550,104,245,'行為實作介面','Bridge','#fff')+svgNode(550,202,245,'不同實作','擴充實作端');
-  if(i===5) body = edge(345,161,265,78)+edge(345,161,265,251)+edge(555,161,635,78)+edge(555,161,635,251)+svgNode(345,128,210,'中介者','集中協調互動','#d5eee3')+svgNode(75,45,190,'參與物件 A','各自完成職責')+svgNode(75,218,190,'參與物件 B','各自完成職責')+svgNode(635,45,190,'參與物件 C','各自完成職責')+svgNode(635,218,190,'參與物件 D','各自完成職責');
+  if(i===0) body = `<rect x="60" y="66" width="780" height="198" rx="18" fill="#e1f1e9"/><text x="90" y="103" font-size="16" fill="#327761">個人報表：先把一件事做好</text>`+edge(295,177,350,177)+edge(550,177,605,177)+svgNode(95,144,200,'讀取自己的紀錄','這個月的閱讀紀錄')+svgNode(350,144,200,'計算閱讀本數','目前只有這種算法')+svgNode(605,144,200,'顯示在網頁上','目前只有這種輸出');
+  if(i===1) body = `<text x="450" y="42" text-anchor="middle" font-size="16" fill="#327761">共同匯出流程呼叫 createReport()，由具體匯出器覆寫</text>`+edge(355,123,545,123)+edge(355,248,545,248)+svgNode(100,90,255,'個人匯出器','覆寫建立方法','#dff1e9')+svgNode(100,215,255,'團體匯出器','覆寫建立方法','#dff1e9')+svgNode(545,90,255,'建立個人報表','回傳共同報表型別')+svgNode(545,215,255,'建立團體報表','回傳共同報表型別');
+  if(i===2) body = `<rect x="60" y="40" width="780" height="246" rx="18" fill="#e4f2ed"/><text x="90" y="76" font-size="16" fill="#327761">報表基底固定流程順序；子類別只改取資料的方式</text>`+edge(295,136,350,136)+edge(550,136,605,136)+svgNode(95,103,200,'取得紀錄','子類別覆寫','#ffedb0')+svgNode(350,103,200,'統計閱讀本數','共同步驟')+svgNode(605,103,200,'呈現結果','共同步驟')+svgNode(95,200,305,'個人報表：取自己的紀錄','覆寫取得紀錄')+svgNode(450,200,355,'團體報表：取全體成員紀錄','覆寫取得紀錄');
+  if(i===3) body = edge(290,163,365,163)+edge(545,163,625,98)+edge(545,163,625,228)+svgNode(65,130,225,'個人／團體報表','把取得的紀錄交給策略','#dff1e9')+svgNode(365,130,180,'統計策略介面','回傳統計結果')+svgNode(625,65,220,'本數策略','計算完成的書本數')+svgNode(625,195,220,'頁數策略','加總已讀頁數')+`<text x="450" y="307" text-anchor="middle" font-size="14" fill="#327761">使用者切換統計方式 → 替換策略；取得紀錄與輸出流程保留</text>`;
+  if(i===4) body = `<rect x="65" y="44" width="325" height="245" rx="16" fill="#e1f1e9"/><rect x="510" y="44" width="325" height="245" rx="16" fill="#fff0c6"/><text x="90" y="77" font-size="15" fill="#327761">維度一：報表種類</text><text x="535" y="77" font-size="15" fill="#8e7440">維度二：輸出實作</text>`+edge(350,136,550,136)+svgNode(105,104,245,'報表抽象','持有輸出介面')+svgNode(105,202,245,'個人報表 / 團體報表','各自決定報表內容')+svgNode(550,104,245,'輸出介面','接受報表內容並呈現')+svgNode(550,202,245,'網頁輸出 / PDF 輸出','各自處理呈現細節');
+  if(i===5) body = edge(265,78,345,149)+edge(265,251,345,170)+edge(635,78,555,149)+edge(555,170,635,251)+svgNode(345,128,210,'面板中介者','協調設定與預覽更新','#d5eee3')+svgNode(75,45,190,'報表種類選單','個人 / 團體 → 回報變更')+svgNode(75,218,190,'統計方式選單','本數 / 頁數 → 回報變更')+svgNode(635,45,190,'輸出格式選單','網頁 / PDF → 回報變更')+svgNode(635,218,190,'預覽區','接收通知，更新報表');
   $('#evolution-diagram').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-labelledby="evo-title"><title id="evo-title">${stages[i][0]}：${stages[i][2]}</title><defs><marker id="evo-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#4e9c83"/></marker></defs><g font-family="Noto Sans TC,system-ui,sans-serif">${body}</g></svg>`;
   $('#evolution-caption').textContent = stages[i][2];
   $$('[data-stage]').forEach((b,index) => b.setAttribute('aria-pressed', index === i));
 }
 $$('[data-stage]').forEach(button => button.addEventListener('click', () => showStage(Number(button.dataset.stage))));
+$('#stage-previous').addEventListener('click', () => showStage(Math.max(0,currentStage-1)));
+$('#stage-next').addEventListener('click', () => showStage(Math.min(stages.length-1,currentStage+1)));
 showStage(0);
 
 // Keep diagram labels readable on narrow screens; only the figure viewport scrolls.
